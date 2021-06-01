@@ -102,19 +102,23 @@ if (animationDiv_2){
 // Форма
 
 function createTable() {
+	let background_color = document.forms["myForm_1"]["color"].value
 	table = "<table border='1' width='100%' cellpadding='5'>" +
-	"<tbody>" +
-	"<tr><td>Марка</td><td>" + document.forms["myForm_1"]["mark"].value + "</td></td>" +
-	"<tr><td>Год выпуска</td><td>" + document.forms["myForm_1"]["yearofissue"].value + "</td></td>" +
-	"<tr><td>Номер</td><td>" + document.forms["myForm_1"]["number"].value + "</td></td>" +
-	"<tr><td>Фамилия владельца</td><td>" + document.forms["myForm_1"]["familiya"].value + "</td></td>" +
-	"<tr><td>Домашний адрес</td><td>" + document.forms["myForm_1"]["adres"].value + "</td></td>" +
-	"<tr><td>Телефон</td><td>" + document.forms["myForm_1"]["telephone"].value + "</td></td>" +
-	"<tr><td>Возраст</td><td>" + document.forms["myForm_1"]["age"].value + "</td></td>" +
-	"<tr><td>Дата происшествия</td><td>" + document.forms["myForm_1"]["dateofincident"].value + "</td></td>" +
-	"<tr><td>Вид происшествия</td><td>" + document.forms["myForm_1"]["typeofincident"].value + "</td></td>" +
-	"<tr><td>Сумма штрафа</td><td>" + document.forms["myForm_1"]["fineamount"].value + "</td></td>" +
-	"</tbody></table>";
+		"<tbody>" +
+		"<tr><td>Фамилия владельца</td><td>" + document.forms["myForm_1"]["familiya"].value + "</td></td>" +
+		"<tr><td>Домашний адрес</td><td>" + document.forms["myForm_1"]["adres"].value + "</td></td>" +
+		"<tr><td>Телефон</td><td>" + document.forms["myForm_1"]["telephone"].value + "</td></td>" +
+		"<tr><td>Марка</td><td>" + document.forms["myForm_1"]["mark"].value + "</td></td>" +
+		"<tr><td>Цвет</td><td><p style='width: 20px; height: 20px; background-color: " + background_color + "'></p></td></td>" +
+		"<tr><td>Год выпуска</td><td>" + document.forms["myForm_1"]["yearofissue"].value + "</td></td>" +
+		"<tr><td>Номер</td><td>" + document.forms["myForm_1"]["number"].value + "</td></td>" +
+
+		"<tr><td>Дата последнего техосмотра</td><td>" + document.forms["myForm_1"]["dateofto"].value + "</td></td>" +
+		"<tr><td>Номер полиса страховки</td><td>" + document.forms["myForm_1"]["polis"].value + "</td></td>" +
+		"<tr><td>Дата оплаты</td><td>" + document.forms["myForm_1"]["paydate"].value + "</td></td>" +
+		"<tr><td>Сумма штрафа</td><td>" + document.forms["myForm_1"]["fineamount"].value + "</td></td>" +
+		"<tr><td>Причина не прохождения</td><td>" + document.forms["myForm_1"]["typeofincident"].value + "</td></td>" +
+		"</tbody></table>";
 	document.getElementById('tables').innerHTML += table;			
 }
 document.forms["myForm_1"].onsubmit = function(e) {

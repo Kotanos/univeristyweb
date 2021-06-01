@@ -48,12 +48,12 @@
 							<input type="text" name="familiya" value="vasia">
 						</p>
 						<p>
-							Дата заключения контракта
-							<input type="date" name="date" value="2019-01-01">
+							Дата рождения
+							<input type="date" name="date" value="2021-01-01" max="2021-06-02">
 						</p>
 						<p>
-							Срок заключения (в годах)
-							<input type="number" name="srok" value="1">
+							Оклад
+							<input type="number" min="1" step="any" name="zp" value="1">
 						</p>
 						<p>
 							<input type="button" id="submit_form" value="Добавить">
@@ -68,13 +68,13 @@
 									Фамилия
 								</th>
 								<th>
-									Дата заключения контракта
+									Дата рождения
 								</th>
 								<th>
-									Срок (в годах)
+									Оклад
 								</th>
 								<th>
-									Окончание контракта
+									Возраст
 								</th>
 							</tr>
 						</thead>
@@ -82,6 +82,8 @@
 
 						</tbody>
 					</table>
+					<p id="avgsalary">
+					</p>
 				</div>
 			</div>
 		</main>
@@ -92,28 +94,37 @@
 		</footer>
 	</div>
 	<script>
-
 		let button = document.getElementById('submit_form');
+		let salary = document.getElementById('avgsalary')
+		var sum_salary = 0;
+		var count = 0;
 		button.onclick = function () {
 			createTable();
 		};
 
-		function dateCalc() {
+		function calcAge() {
 			let date = parseInt(document.forms['myForm']['date'].value.substring(0, 4));
-			return (date + parseInt(document.forms["myForm"]["srok"].value));
+			let age = (new Date().getFullYear()) - date
+			return age;
 		}
 
 		function createTable() {
+			let age = calcAge()
 			let table = "<table border='1' width='100%' cellpadding='5'>" +
 					"<tbody>" +
 					"<tr>" +
 					"<td>" + document.forms["myForm"]["familiya"].value + "</td>" +
 					"<td>" + document.forms["myForm"]["date"].value + "</td>" +
-					"<td>" + document.forms["myForm"]["srok"].value + "</td>" +
-					"<td>" + dateCalc() + "</td>" +
+					"<td>" + document.forms["myForm"]["zp"].value + "</td>" +
+					"<td>" + age + "</td>" +
 					"</tr>" +
 					"</tbody></table>";
+			if (age < 30) {
+				sum_salary += parseInt(document.forms["myForm"]["zp"].value);
+				count++;
+			}
 			document.getElementById('tables').innerHTML += table;
+			salary.innerText = sum_salary / count;
 		}
 	</script>
 </body>

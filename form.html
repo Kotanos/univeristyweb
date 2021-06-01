@@ -43,25 +43,6 @@
 				<div class="row">
 					<form name="myForm_1">
 						<fieldset>
-							<legend>Автомобили</legend>
-							<p>
-								Марка
-								<select name="mark">
-									<option>Марка 1</option>
-									<option>Марка 2</option>
-									<option>Марка 3</option>
-								</select>
-							</p>
-							<p>
-								Год выпуска
-								<input type="yearofissue" name="yearofissue" placeholder="2007" required style="border-color: deepskyblue;">
-							</p>
-							<p>
-								Номер
-								<input type="number" name="number" placeholder="228" required style="border-color: deepskyblue;">
-							</p>
-						</fieldset>
-						<fieldset>
 							<legend>Владельцы автомобилей</legend>
 							<p>
 								Фамилия владельца
@@ -76,30 +57,56 @@
 								<input type="tel" min="0" max="10000" step="1" placeholder="+375 (xx) xxx - xx - xx" name="telephone" onchange="document.getElementById('rangeValue').innerHTML = this.value;">
 <!--								<span id="rangeValue">0</span>-->
 							</p>
-							<p>
-								Возраст
-								<input type="number" min="0" max="100" step="1" placeholder="20" name="age" onchange="document.getElementById('rangeValue').innerHTML = this.value;">
-<!--								<span id="rangeValue">0</span>-->
-							</p>
 						</fieldset>
 						<fieldset>
-							<legend>Нарушения</legend>
+							<legend>Автомобили</legend>
 							<p>
-								Дата происшествия
-								<input type="date" name="dateofincident" required style="border-color: deepskyblue;">
-							</p>
-							<p>
-								Вид происшествия
-								<select name="typeofincident">
-									<option>Происшествие 1</option>
-									<option>Происшествие 2</option>
-									<option>Происшествие 3</option>
+								Марка
+								<select name="mark">
+									<option>Марка 1</option>
+									<option>Марка 2</option>
+									<option>Марка 3</option>
 								</select>
 							</p>
 							<p>
-								Сумма штрафа
+								Цвет
+								<input type="color" name="color" required style="border-color: deepskyblue;">
+							</p>
+							<p>
+								Год выпуска
+								<input type="number" name="yearofissue" min=1000 max=3000 placeholder="2007" required style="border-color: deepskyblue;">
+							</p>
+							<p>
+								Номер
+								<input type="number" name="number" placeholder="228" required style="border-color: deepskyblue;">
+							</p>
+						</fieldset>
+						<fieldset>
+							<legend>Техосмотр</legend>
+							<p>
+								Дата последнего техосмотра
+								<input type="date" name="dateofto" required style="border-color: deepskyblue;">
+							</p>
+							<p>
+								Номер полиса страховки
+								<input type="text" name="polis" required style="border-color: deepskyblue;">
+							</p>
+							<p>
+								Дата оплаты
+								<input type="date" name="paydate" required style="border-color: deepskyblue;">
+							</p>
+							<p>
+								Сумма
 								<input type="number" min="0" max="10000" step="1" value="0" name="fineamount" onchange="document.getElementById('rangeValue2').innerHTML = this.value;">
 <!--								<span id="rangeValue2">0</span>-->
+							</p>
+							<p>
+								Причина не прохождения
+								<select name="typeofincident">
+									<option>Причина 1</option>
+									<option>Причина 2</option>
+									<option>Причина 3</option>
+								</select>
 							</p>
 						</fieldset>
 						<input type="submit" id="submit_form" value="Отправить">
