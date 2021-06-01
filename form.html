@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta content="width=device-width, initial-scale=1" name="viewport"/>
+	<title>Формы</title>
+	<link rel="shortcut icon" href="img/favicon.png" type="image/png">
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+	<div class="wrapper">
+		<!-- Шапка -->
+		<header>
+			<div class="logo">
+				<img src="img/logo.png" alt="" usemap="#image-map">
+				<map name="image-map">
+				<area target="" alt="" title="" href="style-css.html" coords="1,1,106,1,2,69" shape="poly">
+					<area target="" alt="" title="" href="krossvord.html" coords="214,2,3,141,104,142,213,66" shape="poly">
+					<area target="" alt="" title="" href="date.html" coords="214,70,109,142,213,141" shape="poly">
+					<area target="" alt="" title="" href="js1.html" coords="111,0,0,75,1,141,211,0" shape="poly">
+				</map>
+			</div>
+			<div class="info-header">
+				<div class="fio">
+					<h1>Авраменко Андрей Валерьевич</h1>
+				</div>
+				<nav>
+					<ul class="main-menu">
+						<li><a href="index.html">Форматирование</a></li>
+						<li><a href="style-css.html">CSS</a></li>
+						<li><a href="js1.html">Js</a></li>
+						<li><a href="krossvord.html">Кроссворд</a></li>
+						<li><a class="active" href="form.html">Формы</a></li>
+						<li><a href="date.html">Даты</a></li>
+					</ul>            
+				</nav> 
+			</div>
+		</header>
+		<!-- Текстовый блок -->
+		<main>
+			<div class="row content-div">
+				<div class="row">
+					<form name="myForm_1">
+						<fieldset>
+							<legend>Автомобили</legend>
+							<p>
+								Марка
+								<select name="mark">
+									<option>Марка 1</option>
+									<option>Марка 2</option>
+									<option>Марка 3</option>
+								</select>
+							</p>
+							<p>
+								Год выпуска
+								<input type="yearofissue" name="yearofissue" placeholder="2007" required style="border-color: deepskyblue;">
+							</p>
+							<p>
+								Номер
+								<input type="number" name="number" placeholder="228" required style="border-color: deepskyblue;">
+							</p>
+						</fieldset>
+						<fieldset>
+							<legend>Владельцы автомобилей</legend>
+							<p>
+								Фамилия владельца
+								<input type="text" name="familiya" placeholder="фамилия" required style="border-color: deepskyblue;">
+							</p>
+							<p>
+								Домашний адрес
+								<input type="text" required name="adres" placeholder="адрес" style="border-color: deepskyblue;">
+							</p>
+							<p>
+								Телефон
+								<input type="tel" min="0" max="10000" step="1" placeholder="+375 (xx) xxx - xx - xx" name="telephone" onchange="document.getElementById('rangeValue').innerHTML = this.value;">
+<!--								<span id="rangeValue">0</span>-->
+							</p>
+							<p>
+								Возраст
+								<input type="number" min="0" max="100" step="1" placeholder="20" name="age" onchange="document.getElementById('rangeValue').innerHTML = this.value;">
+<!--								<span id="rangeValue">0</span>-->
+							</p>
+						</fieldset>
+						<fieldset>
+							<legend>Нарушения</legend>
+							<p>
+								Дата происшествия
+								<input type="date" name="dateofincident" required style="border-color: deepskyblue;">
+							</p>
+							<p>
+								Вид происшествия
+								<select name="typeofincident">
+									<option>Происшествие 1</option>
+									<option>Происшествие 2</option>
+									<option>Происшествие 3</option>
+								</select>
+							</p>
+							<p>
+								Сумма штрафа
+								<input type="number" min="0" max="10000" step="1" value="0" name="fineamount" onchange="document.getElementById('rangeValue2').innerHTML = this.value;">
+<!--								<span id="rangeValue2">0</span>-->
+							</p>
+						</fieldset>
+						<input type="submit" id="submit_form" value="Отправить">
+					</form>
+					<button onclick="document.getElementById('tables').innerHTML = '' ">Очистить</button>
+				</div>
+				<div class="row" id="tables">
+				</div>
+			</div>
+		</main>
+		<!-- Подвал -->
+		<footer class="text-footer">       
+				<span>Авраменко Андрей Валерьевич ©</span>
+			    <a href="http://gmail.com" class="footer_mail">avram.1098@mail.ru</a>
+		</footer>
+	</div>
+
+	<script src="js/main.js"></script>
+
+</body>
+</html>

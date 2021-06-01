@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta content="width=device-width, initial-scale=1" name="viewport"/>
+	<title>Data</title>
+	<link rel="shortcut icon" href="img/favicon.png" type="image/png">
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+	<div class="wrapper">
+		<!-- Шапка -->
+		<header>
+			<div class="logo">
+				<img src="img/logo.png" alt="" usemap="#image-map">
+				<map name="image-map">
+			<area target="" alt="" title="" href="style-css.html" coords="1,1,106,1,2,69" shape="poly">
+					<area target="" alt="" title="" href="krossvord.html" coords="214,2,3,141,104,142,213,66" shape="poly">
+					<area target="" alt="" title="" href="date.html" coords="214,70,109,142,213,141" shape="poly">
+					<area target="" alt="" title="" href="js1.html" coords="111,0,0,75,1,141,211,0" shape="poly">
+				</map>
+			</div>
+			<div class="info-header">
+				<div class="fio">
+					<h1>Авраменко Андрей Валерьевич </h1>
+				</div>
+				<nav>
+					<ul class="main-menu">
+						<li><a href="index.html">Форматирование</a></li>
+						<li><a href="style-css.html">CSS</a></li>
+						<li><a href="js1.html">Js</a></li>
+						<li><a href="krossvord.html">Кроссворд</a></li>
+						<li><a href="form.html">Формы</a></li>
+						<li><a class="active" href="date.html">Даты</a></li>
+					</ul>            
+				</nav> 
+			</div>
+		</header>
+		<!-- Текстовый блок -->
+		<main>
+			<div class="row content-div">
+				<div class="row">
+					<form name="myForm">
+						<p>
+							Фамилия
+							<input type="text" name="familiya" value="vasia">
+						</p>
+						<p>
+							Дата заключения контракта
+							<input type="date" name="date" value="2019-01-01">
+						</p>
+						<p>
+							Срок заключения (в годах)
+							<input type="number" name="srok" value="1">
+						</p>
+						<p>
+							<input type="button" id="submit_form" value="Добавить">
+						</p>
+					</form>
+				</div>
+				<div class="row">
+					<table border="1" width="100%" id="table">
+						<thead>
+							<tr>
+								<th>
+									Фамилия
+								</th>
+								<th>
+									Дата заключения контракта
+								</th>
+								<th>
+									Срок (в годах)
+								</th>
+								<th>
+									Окончание контракта
+								</th>
+							</tr>
+						</thead>
+						<tbody id="tables">
+
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</main>
+		<!-- Подвал -->
+		<footer class="text-footer">       
+				<span>Авраменко Андрей Валерьевич  ©</span>
+			    <a href="http://gmail.com" class="footer_mail">avram.1098@mail.ru</a>
+		</footer>
+	</div>
+	<script>
+
+		let button = document.getElementById('submit_form');
+		button.onclick = function () {
+			createTable();
+		};
+
+		function dateCalc() {
+			let date = parseInt(document.forms['myForm']['date'].value.substring(0, 4));
+			return (date + parseInt(document.forms["myForm"]["srok"].value));
+		}
+
+		function createTable() {
+			let table = "<table border='1' width='100%' cellpadding='5'>" +
+					"<tbody>" +
+					"<tr>" +
+					"<td>" + document.forms["myForm"]["familiya"].value + "</td>" +
+					"<td>" + document.forms["myForm"]["date"].value + "</td>" +
+					"<td>" + document.forms["myForm"]["srok"].value + "</td>" +
+					"<td>" + dateCalc() + "</td>" +
+					"</tr>" +
+					"</tbody></table>";
+			document.getElementById('tables').innerHTML += table;
+		}
+	</script>
+</body>
+</html>
