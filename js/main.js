@@ -7,23 +7,27 @@ if (animationDiv_1){
 //init map
 
 
-	for (i = 450 - 18; i > 0; i--) {
-		map.push(0 + "px_" + (i * 3) + "px");
-	}
-
-	var j = 0;
 	for (i = 0; i <= 450 - 18; i++) {
-		map.push(i + "px_" + (j * 3) + "px");
-		j++;
-	}
-
-	for (i = 450 - 18; i >= 0; i--) {
 		map.push(450 - 18 + "px_" + (i * 3) + "px");
 	}
 
+	for (i = 450 - 18; i > (450 - 18)/2; i--) {
+		map.push((i + 3) + "px_" + (i * 3) + "px");
+	}
+
+	// var j = 0;
+	// for (i = 0; i <= 450 - 18; i++) {
+	// 	map.push(i + "px_" + (j * 3) + "px");
+	// 	j++;
+	// }
+	//
+	// for (i = 450 - 18; i >= 0; i--) {
+	// 	map.push(450 - 18 + "px_" + (i * 3) + "px");
+	// }
+
 	var index = 0;
 	function move() {
-		if (index < 1350 - 18 * 3) {
+		if (index < map.length) {
 			animationDiv_1.style.top = map[index].split("_")[0];
 			animationDiv_1.style.right = map[index].split("_")[1];
 			index++;
