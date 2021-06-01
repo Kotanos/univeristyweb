@@ -4,26 +4,22 @@ var animationDiv_1 = document.getElementById("animation-div_1");
 
 if (animationDiv_1){
 	var map = new Array(); // map(top, right)
-//init map
-
 
 	for (i = 0; i <= 450 - 18; i++) {
 		map.push(450 - 18 + "px_" + (i * 3) + "px");
 	}
 
-	for (i = 450 - 18; i > (450 - 18)/2; i--) {
-		map.push((i + 3) + "px_" + (i * 3) + "px");
+	for (i = 0; i <= 450 - 18; i++) {
+		map.push((450 - 18) - (i / 2) + "px_" + (450 - 18 -i) * 3 + "px");
 	}
 
-	// var j = 0;
-	// for (i = 0; i <= 450 - 18; i++) {
-	// 	map.push(i + "px_" + (j * 3) + "px");
-	// 	j++;
-	// }
-	//
-	// for (i = 450 - 18; i >= 0; i--) {
-	// 	map.push(450 - 18 + "px_" + (i * 3) + "px");
-	// }
+	for (i = 0; i <= 450 - 18; i++) {
+		map.push(((450 - 18)-i)/2 + "px_" + i * 3 + "px");
+	}
+
+	for (i = 0; i <= 450 - 18; i++) {
+		map.push(0 + "px_" + ((450 - 18) - i) * 3 + "px");
+	}
 
 	var index = 0;
 	function move() {
