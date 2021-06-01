@@ -97,7 +97,7 @@ header {
 }
 
 .sub-menu .active, .sub-menu a:hover {
-	background: #92eba6;
+	background: gray;
 }
 
 main {
@@ -192,6 +192,8 @@ footer {
 	white-space:nowrap;
 	text-overflow:ellipsis;
 }
+
+/* Медиа запрос */
 
 @media (max-width: 1280px) { 
 	
