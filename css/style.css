@@ -337,7 +337,7 @@ p[attr2$="end"] {
 
 /* ----- Фильтры, градиент фона, тени ----- */
 .lbl {
-	background-image: linear-gradient(#aeffa6, #faa9ff);
+	background-image: linear-gradient(gray, #faa9ff);
 	border: 2px solid black;
 	height: 90px;
 	text-align: center;
