@@ -24,6 +24,11 @@ header {
 	display:flex;
 }
 
+pre {
+	text-align: center;
+	font-size: larger;
+}
+
 .info-header {
 	margin-left:auto;
 	margin-right:auto;
@@ -35,6 +40,22 @@ header {
 	text-shadow:1px 1px 10px black;
 }
 
+fieldset {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+input {
+	font-size: 1.5em;
+}
+.myform {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+label {
+	font-size: 1.5em;
+}
 .main-menu {
 	list-style:none;
 	padding:0;
@@ -207,6 +228,12 @@ footer {
 
 }
 
+@media (max-width: 700px) {
+	.sub-menu {
+		display: None;
+	}
+}
+
 /* ----- Селекторы ----- */
 p[attr] {
 	color:red;
@@ -233,7 +260,7 @@ p[attr2$="end"] {
 
 /* ----- Псевдоклассы ----- */
 :root {
-	--cell-bg-color: #baffc0;
+	--cell-bg-color: red;
 }
 
 .ps-classes  li {
@@ -320,7 +347,7 @@ p[attr2$="end"] {
 	padding: 15px;
 	font-size: 3.5vw;
 	font-weight: bold;
-	text-shadow: 14px -15px 5px #8ccaa9, -20px 18px 7px #715151, 3px 3px 1px #bbb, -17px -2px 5px #c29191, 11px 16px 7px #4a3333;
+	text-shadow: 3px 3px 1px #bbb;
 }
 
 .afewshdws{
@@ -372,7 +399,7 @@ p[attr2$="end"] {
 }
 
 .filters .fst-filter {
-	background:url(../img/img_3.jpg); 
+	background:url(../img/img_1.jpg);
 	background-size:cover;
 }
 
@@ -381,7 +408,7 @@ p[attr2$="end"] {
 }
 
 .filters .sec-filter {
-	background:url(../img/img_4.jpg); 
+	background:url(../img/img_2.jpg);
 	background-size:cover;
 }
 
@@ -390,30 +417,12 @@ p[attr2$="end"] {
 }
 
 .filters .thrd-filter {
-	background:url(../img/img_5.jpeg); 
+	background:url(../img/img_3.jpg);
 	background-size:cover;   
 }
 
 .filters .thrd-filter:hover {
 	filter:opacity(50%);
-}
-
-.filters .frth-filter {
-	background:url(../img/img_6.jpeg); 
-	background-size:cover;
-}
-
-.filters .frth-filter:hover {
-	filter:grayscale(0.75);
-}
-
-.filters .fvth-filter {
-	background:url(../img/img_7.jpeg); 
-	background-size:cover;
-}
-
-.filters .fvth-filter:hover {
-	filter:sepia(100%);
 }
 
 /* ----- Переходы, преобразование и анимация ----- */
@@ -704,7 +713,7 @@ p[attr2$="end"] {
 	height:50px;
 	border-radius:4px;
 	border:2px solid black;
-	background:skyblue;
+	background:var(--cell-bg-color);
 	color:black;
 	line-height:50px;
 	font-weight:bold;

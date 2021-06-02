@@ -42,18 +42,20 @@
 		<main>
 			<div class="row content-div">
 				<div class="row">
-					<form name="myForm">
+					<form name="myForm" class="myform">
 						<p>
-							Фамилия
-							<input type="text" name="familiya" value="vasia">
+							<label for="familiya">
+								Фамилия
+							</label>
+							<input type="text" name="familiya" id="familiya" value="Shishov">
 						</p>
 						<p>
-							Дата рождения
-							<input type="date" name="date" value="2021-01-01" max="2021-06-02">
+							<label for="date">Дата рождения</label>
+							<input type="date" name="date" id="date" value="2021-01-01" max="2021-06-02">
 						</p>
 						<p>
-							Оклад
-							<input type="number" min="1" step="any" name="zp" value="1">
+							<label for="zp">Оклад</label>
+							<input type="number" min="1" step="any" name="zp" id="zp" value="1">
 						</p>
 						<p>
 							<input type="button" id="submit_form" value="Добавить">
